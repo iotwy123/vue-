@@ -23,10 +23,10 @@
 		<!-- 六宫格 -->
 		<ul class="mui-table-view mui-grid-view mui-grid-9">
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="width: 33%;">
-				<a href="#">
+				<router-link to="/home/newslist">
 					<span class="mui-icon mui-icon-chat"></span>
 					<div class="mui-media-body">新闻资讯</div>
-				</a>
+				</router-link>
 			</li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="width: 33%;">
 				<a href="#">
@@ -79,7 +79,7 @@
 		},
 		methods: {
 			getLunbotu() {
-				this.$http.get('http://vue.studyit.io/api/getlunbo').then(result => {
+				this.$http.get('api/getlunbo').then(result => {
 					//console.log(result.body)
 					if (result.body.status === 0) {
 						this.lunbotuList = result.body.message
