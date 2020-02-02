@@ -8,17 +8,7 @@
 			</mt-swipe-item>
 		</mt-swipe> -->
 		<!-- 自定义区域 -->
-		<mt-swipe :auto='4000'>
-			<mt-swipe-item>
-				<img src="http://47.102.206.147:8080/coffe/images/cooker.jpg"/>
-			</mt-swipe-item>
-			<mt-swipe-item>
-				<img src="http://47.102.206.147:8080/coffe/images/banner.jpg"/>
-			</mt-swipe-item>
-			<mt-swipe-item>
-				<img src="http://47.102.206.147:8080/coffe/images/Latte.jpg"/>
-			</mt-swipe-item>
-		</mt-swipe>
+		<swiper :lunbotuList="lunbotuList" :isfull="true"></swiper>
 
 		<!-- 六宫格 -->
 		<ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -29,16 +19,16 @@
 				</router-link>
 			</li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="width: 33%;">
-				<a href="#">
+				<router-link to="/home/photolist">
 					<span class="mui-icon mui-icon-camera"><span class="mui-badge">5</span></span>
 					<div class="mui-media-body">图片分享</div>
-				</a>
+				</router-link>
 			</li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="width: 33%;">
-				<a href="#">
+				<router-link to="/home/goodlist">
 					<span class="mui-icon mui-icon-home"></span>
 					<div class="mui-media-body">商品</div>
-				</a>
+				</router-link>
 			</li>
 			<br/>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="width: 33%;">
@@ -65,6 +55,7 @@
 </template>
 
 <script>
+	import swiper from '../subcomponent/swiper.vue'
 	import {
 		Toast
 	} from 'mint-ui'
@@ -88,31 +79,14 @@
 					}
 				})
 			}
+		},
+		components:{
+			swiper
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.mint-swipe {
-		height: 200px;
 
-		.mint-swipe-item {
-			&:nth-child(1) {
-				background-color: red;
-			}
-
-			&:nth-child(2) {
-				background-color: greenyellow;
-			}
-
-			&:nth-child(3) {
-				background-color: blue;
-			}
-		}
-	}
-	img{
-		width: 100%;
-		height: 100%;
-	}
 	
 </style>
